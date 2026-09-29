@@ -48,14 +48,14 @@ export default function QuoteForm() {
 
   if (status === "success") {
     return (
-      <div className="p-8 rounded-2xl bg-white/90 border border-emerald-200 text-center space-y-4 shadow-xl">
-        <div className="w-14 h-14 mx-auto rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-          <CheckCircle2 className="w-8 h-8" />
+      <div className="p-5 sm:p-8 rounded-2xl bg-white/90 border border-emerald-200 text-center space-y-3 sm:space-y-4 shadow-xl">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+          <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8" />
         </div>
-        <h3 className="text-xl font-bold text-[#0A2033]">
+        <h3 className="text-lg sm:text-xl font-bold text-[#0A2033]">
           Offerte-aanvraag ontvangen!
         </h3>
-        <p className="text-sm text-[#526777] max-w-md mx-auto leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#526777] max-w-md mx-auto leading-relaxed">
           Hartelijk dank, <strong>{formData.naam}</strong>. We hebben uw aanvraag voor {formData.dienst.toLowerCase()} ontvangen. We nemen spoedig contact met u op via {formData.email} of telefonisch.
         </p>
         <button
@@ -72,7 +72,7 @@ export default function QuoteForm() {
               bericht: "",
             });
           }}
-          className="mt-4 px-6 py-2.5 rounded-xl btn-secondary text-xs font-bold"
+          className="mt-3 px-5 py-2.5 rounded-xl btn-secondary text-xs font-bold"
         >
           Nog een bericht sturen
         </button>
@@ -81,11 +81,11 @@ export default function QuoteForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4" noValidate>
       {status === "error" && (
         <div
           role="alert"
-          className="p-3.5 rounded-xl bg-red-50/90 border border-red-200 flex items-start gap-3 text-red-800 text-xs font-medium"
+          className="p-3 rounded-xl bg-red-50/90 border border-red-200 flex items-start gap-2.5 text-red-800 text-xs font-medium"
         >
           <AlertCircle className="w-4 h-4 shrink-0 text-red-600 mt-0.5" />
           <span>{errorMessage}</span>
@@ -93,9 +93,9 @@ export default function QuoteForm() {
       )}
 
       {/* Row 1: Naam + E-mail */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
-          <label htmlFor="naam" className="block text-xs font-bold text-[#102A43] mb-1.5">
+          <label htmlFor="naam" className="block text-[11px] sm:text-xs font-bold text-[#102A43] mb-1">
             Uw Naam <span className="text-[#1677FF]">*</span>
           </label>
           <input
@@ -106,12 +106,12 @@ export default function QuoteForm() {
             value={formData.naam}
             onChange={handleChange}
             placeholder="bijv. Jan Jansen"
-            className="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-200/90 text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-sm"
+            className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-white/80 border border-slate-200/90 text-xs sm:text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-2xs"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-xs font-bold text-[#102A43] mb-1.5">
+          <label htmlFor="email" className="block text-[11px] sm:text-xs font-bold text-[#102A43] mb-1">
             E-mailadres <span className="text-[#1677FF]">*</span>
           </label>
           <input
@@ -122,15 +122,15 @@ export default function QuoteForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="naam@voorbeeld.nl"
-            className="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-200/90 text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-sm"
+            className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-white/80 border border-slate-200/90 text-xs sm:text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-2xs"
           />
         </div>
       </div>
 
       {/* Row 2: Telefoon + Type pand */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
-          <label htmlFor="telefoon" className="block text-xs font-bold text-[#102A43] mb-1.5">
+          <label htmlFor="telefoon" className="block text-[11px] sm:text-xs font-bold text-[#102A43] mb-1">
             Telefoonnummer
           </label>
           <input
@@ -140,12 +140,12 @@ export default function QuoteForm() {
             value={formData.telefoon}
             onChange={handleChange}
             placeholder="bijv. 06 12345678"
-            className="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-200/90 text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-sm"
+            className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-white/80 border border-slate-200/90 text-xs sm:text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-2xs"
           />
         </div>
 
         <div>
-          <label htmlFor="typePand" className="block text-xs font-bold text-[#102A43] mb-1.5">
+          <label htmlFor="typePand" className="block text-[11px] sm:text-xs font-bold text-[#102A43] mb-1">
             Type pand
           </label>
           <select
@@ -153,7 +153,7 @@ export default function QuoteForm() {
             name="typePand"
             value={formData.typePand}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-200/90 text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-sm"
+            className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-white/80 border border-slate-200/90 text-xs sm:text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-2xs"
           >
             <option value="Woning">Particuliere woning</option>
             <option value="Appartement / VvE">Appartement / VvE</option>
@@ -166,9 +166,9 @@ export default function QuoteForm() {
       </div>
 
       {/* Row 3: Locatie + Dienst */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
-          <label htmlFor="locatie" className="block text-xs font-bold text-[#102A43] mb-1.5">
+          <label htmlFor="locatie" className="block text-[11px] sm:text-xs font-bold text-[#102A43] mb-1">
             Locatie pand (plaats of postcode)
           </label>
           <input
@@ -178,12 +178,12 @@ export default function QuoteForm() {
             value={formData.locatie}
             onChange={handleChange}
             placeholder="bijv. Diemen of Amsterdam"
-            className="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-200/90 text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-sm"
+            className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-white/80 border border-slate-200/90 text-xs sm:text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-2xs"
           />
         </div>
 
         <div>
-          <label htmlFor="dienst" className="block text-xs font-bold text-[#102A43] mb-1.5">
+          <label htmlFor="dienst" className="block text-[11px] sm:text-xs font-bold text-[#102A43] mb-1">
             Gewenste dienst
           </label>
           <select
@@ -191,7 +191,7 @@ export default function QuoteForm() {
             name="dienst"
             value={formData.dienst}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-200/90 text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-sm"
+            className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-white/80 border border-slate-200/90 text-xs sm:text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-2xs"
           >
             {companyData.services.map((s) => (
               <option key={s.id} value={s.title}>
@@ -207,7 +207,7 @@ export default function QuoteForm() {
 
       {/* Row 4: Bericht */}
       <div>
-        <label htmlFor="bericht" className="block text-xs font-bold text-[#102A43] mb-1.5">
+        <label htmlFor="bericht" className="block text-[11px] sm:text-xs font-bold text-[#102A43] mb-1">
           Bericht of toelichting (optioneel)
         </label>
         <textarea
@@ -217,7 +217,7 @@ export default function QuoteForm() {
           value={formData.bericht}
           onChange={handleChange}
           placeholder="Beschrijf eventuele bijzonderheden, oppervlakte of de aard van de vervuiling..."
-          className="w-full px-4 py-3 rounded-xl bg-white/80 border border-slate-200/90 text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-sm resize-y"
+          className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-white/80 border border-slate-200/90 text-xs sm:text-sm text-[#0A2033] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:border-transparent transition-all shadow-2xs resize-y"
         />
       </div>
 
@@ -225,7 +225,7 @@ export default function QuoteForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full py-4 px-6 rounded-xl btn-primary flex items-center justify-center gap-2 font-bold text-sm tracking-wide uppercase shadow-lg shadow-blue-500/25 disabled:opacity-50"
+        className="w-full py-3.5 sm:py-4 px-5 rounded-xl btn-primary flex items-center justify-center gap-2 font-bold text-xs sm:text-sm tracking-wide uppercase shadow-md shadow-blue-500/25 disabled:opacity-50"
       >
         <Send className="w-4 h-4" />
         <span>
@@ -233,7 +233,7 @@ export default function QuoteForm() {
         </span>
       </button>
 
-      <p className="text-[11px] text-[#526777] text-center pt-1 font-normal">
+      <p className="text-[10px] sm:text-[11px] text-[#526777] text-center pt-0.5 font-normal">
         Vrijblijvend en kosteloos. Uw gegevens worden uitsluitend gebruikt voor deze offerte.
       </p>
     </form>
