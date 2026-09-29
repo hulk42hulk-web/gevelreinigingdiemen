@@ -15,7 +15,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -26,25 +26,25 @@ export default function Navbar() {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled
-            ? "py-2.5 bg-white/75 backdrop-blur-xl border-b border-white/80 shadow-[0_4px_24px_-4px_rgba(10,32,51,0.06)]"
-            : "py-4 bg-[#F4F8FB]/80 backdrop-blur-md border-b border-slate-200/50"
+            ? "py-2 sm:py-2.5 bg-white/85 backdrop-blur-xl border-b border-white/90 shadow-[0_4px_20px_-4px_rgba(10,32,51,0.06)]"
+            : "py-3 sm:py-4 bg-[#F4F8FB]/85 backdrop-blur-md border-b border-slate-200/50"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2">
             {/* Architectural Brand Mark */}
             <Link
               href="/"
-              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#1677FF] rounded-lg p-1"
+              className="flex items-center gap-2.5 group focus:outline-none focus:ring-2 focus:ring-[#1677FF] rounded-lg p-0.5 shrink"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1677FF] to-[#0A2033] flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300 border border-white/40">
-                <span className="font-extrabold text-lg tracking-wider">GD</span>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#1677FF] to-[#0A2033] flex items-center justify-center text-white shadow-sm shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300 border border-white/40 shrink-0">
+                <span className="font-extrabold text-sm sm:text-base tracking-wider">GD</span>
               </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-sm sm:text-base tracking-tight text-[#0A2033] group-hover:text-[#1677FF] transition-colors leading-tight">
+              <div className="flex flex-col min-w-0">
+                <span className="font-extrabold text-xs sm:text-base tracking-tight text-[#0A2033] group-hover:text-[#1677FF] transition-colors leading-tight truncate">
                   GEVELREINIGING DIEMEN
                 </span>
-                <span className="text-[10px] tracking-widest uppercase font-semibold text-[#526777]">
+                <span className="text-[9px] sm:text-[10px] tracking-wider uppercase font-semibold text-[#526777] leading-none mt-0.5 truncate">
                   Specialistisch Gevelonderhoud
                 </span>
               </div>
@@ -164,12 +164,12 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Controls */}
-            <div className="flex items-center gap-2 lg:hidden">
+            {/* Mobile Controls (Sleek Glassmorphic Buttons) */}
+            <div className="flex items-center gap-1.5 lg:hidden shrink-0">
               <a
                 href={companyData.contact.phoneHref}
                 aria-label={`Bellen naar ${companyData.contact.phone}`}
-                className="p-2.5 rounded-xl bg-white/80 border border-slate-200/80 text-[#1677FF] shadow-sm active:scale-95 transition-transform"
+                className="w-9 h-9 rounded-xl bg-white/80 backdrop-blur-md border border-white/90 text-[#1677FF] shadow-xs flex items-center justify-center active:scale-95 transition-transform"
               >
                 <Phone className="w-4 h-4" />
               </a>
@@ -180,9 +180,9 @@ export default function Navbar() {
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu-drawer"
                 aria-label="Menu openen"
-                className="p-2.5 rounded-xl bg-white/80 border border-slate-200/80 text-[#0A2033] shadow-sm active:scale-95 transition-transform"
+                className="w-9 h-9 rounded-xl bg-white/80 backdrop-blur-md border border-white/90 text-[#0A2033] shadow-xs flex items-center justify-center active:scale-95 transition-transform"
               >
-                <Menu className="w-5 h-5" />
+                <Menu className="w-4 h-4" />
               </button>
             </div>
           </div>

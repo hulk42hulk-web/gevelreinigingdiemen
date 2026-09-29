@@ -28,7 +28,7 @@ export default function AlgenMosPage() {
   const faqSchema = getFAQSchema(service.faqs);
 
   return (
-    <div className="architectural-bg py-8 lg:py-12">
+    <div className="architectural-bg py-4 sm:py-8 lg:py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -38,20 +38,20 @@ export default function AlgenMosPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         <Breadcrumbs items={breadcrumbItems} />
 
         {/* Hero Header */}
-        <div className="max-w-3xl my-8 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-xs font-bold text-[#1677FF] uppercase tracking-wider">
+        <div className="max-w-3xl my-4 sm:my-8 space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] sm:text-xs font-bold text-[#1677FF] uppercase tracking-wider">
             <span>Dienst 07 • Biologische Aangroei</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A2033] tracking-tight leading-tight">
+          <h1 className="text-[clamp(1.65rem,5.5vw,3rem)] font-extrabold text-[#0A2033] tracking-tight leading-[1.18]">
             {service.headline}
           </h1>
 
-          <p className="text-base sm:text-lg text-[#526777] font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-[#526777] font-normal leading-relaxed">
             {service.fullDescription}
           </p>
 
